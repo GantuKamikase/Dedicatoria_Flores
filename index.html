@@ -1,0 +1,60 @@
+<!--
+  archivo: pagina_qr_index.html
+  Versión personalizada: título y botón hacia WhatsApp.
+  Antes de subir: reemplaza PHONE_NUMBER por tu número en formato internacional (sin +). Ejemplo para Colombia: 573001234567
+  Opciones de enlace WhatsApp:
+    - Sin texto: https://wa.me/PHONE_NUMBER
+    - Con texto prellenado: https://wa.me/PHONE_NUMBER?text=Hola%20quiero%20seguir%20tu%20trabajo
+-->
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>¡¿Te gustaron?!</title>
+  <meta name="description" content="Página desde QR con botón a WhatsApp" />
+  <style>
+    :root{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;}
+    html,body{height:100%;margin:0}
+    body{display:flex;align-items:center;justify-content:center;padding:24px;background:linear-gradient(135deg,#f7f7fb,#ffffff);color:#111}
+    .card{max-width:720px;width:100%;background:white;border-radius:12px;box-shadow:0 6px 24px rgba(20,20,45,0.08);padding:36px;text-align:center}
+    h1{margin:0 0 12px;font-size:2rem}
+    p{margin:0 0 18px;color:#444}
+    .btn{
+      display:inline-block;padding:14px 22px;border-radius:12px;text-decoration:none;font-weight:700;background:#25D366;color:#fff;font-size:1rem;box-shadow:0 6px 18px rgba(37,211,102,0.18);
+    }
+    .small{font-size:0.88rem;color:#666;margin-top:12px}
+    footer{margin-top:18px;font-size:0.85rem;color:#666}
+    @media (max-width:520px){.card{padding:20px}h1{font-size:1.5rem}}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>¡¿Te gustaron?!</h1>
+    <p>Gracias por ver esto. Si quieres seguirme o escribirme, usa el botón de WhatsApp.</p>
+
+    <!-- Reemplaza PHONE_NUMBER por tu número en formato internacional sin '+' ni guiones -->
+    <a class="btn" id="waBtn" href="https://wa.me/573185154826" target="_blank" rel="noopener noreferrer">Sigueme</a>
+
+    <div class="small"></div>
+    <footer></footer>
+  </main>
+
+  <script>
+    // Si quieres, puedes cambiar el número directamente desde el código antes de subir.
+    // Ejemplo para Colombia (reemplaza 3001234567 por tu número):
+    // const phone = '57' + '3001234567';
+    // document.getElementById('waBtn').href = `https://wa.me/${phone}`;
+
+    // Este script detecta si el desarrollador dejó un marcador (PHONE_NUMBER) y muestra una advertencia visual.
+    (function(){
+      const btn = document.getElementById('waBtn');
+      if(btn.href.includes('PHONE_NUMBER')){
+        btn.style.filter = 'grayscale(1)';
+        btn.title = 'Reemplaza PHONE_NUMBER dentro del HTML por tu número real antes de publicar.';
+      }
+    })();
+  </script>
+</body>
+</html>
